@@ -7,4 +7,4 @@ Get-Clean bounces whitelisted users off the PowerShell Transcript Logs and flags
 
 PowerShell Transcript Logging must be enabled first: https://happycamper84.medium.com/enabling-powershell-scriptblock-and-transcript-logging-68a6ca339794
 
-I added a sample Dirty Word list with some commman attacker commands like 'iex' and a bunch of stuff from my Red Team notes. Obviously attackers can obfuscate, use PS1s with custom named functions, etc. This is just a PoC to test the idea and a good start towards flagging the low hanging fruit and script kiddies.
+I added a sample Dirty Word list with some common attacker commands like 'iex' and a bunch of stuff from my Red Team notes. Obviously attackers can obfuscate, use PS1s with custom named functions, etc. This is just a PoC to test the idea and a good start towards flagging the low hanging fruit and script kiddies.
