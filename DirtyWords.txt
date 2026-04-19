@@ -1,0 +1,45 @@
+mimikatz
+sekurlsa
+lsass
+token::elevate
+privilege::debug
+Add-MpPreference -ExclusionPath
+Set-MpPreference -DisableRealTimeMonitoring $true
+!processprotect /process:lsass.exe /remove
+vault::cred
+lsadump
+kerberos::ptt
+rubeus
+invoke-wmi
+Get-Process lsass
+Out-Minidump
+Invoke-ACLScanner
+Find-InterestingDomainAcl
+powerview
+Get-Net
+(Get-WmiObject -class "Win32_TSGeneralSetting" -Namespace root\cimv2\terminalservices -ComputerName
+-Filter "TerminalName='RDP-tcp'").SetUserAuthenticationRequired(0)
+New-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Lsa' -name 'DisableRestrictedAdmin' -PropertyType 'DWORD' -value 0
+Set-ItemProperty -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 0
+SharpHound
+psexec
+pypykatz
+S`eT-It`em
+amsi
+[mM][iI][mM][iI][kK][aA][tT][zZ]
+FromBase64String
+\bIEX\b|Invoke-Expression
+Invoke-CimMethod
+Invoke-WebRequest|iwr
+\b-enc\b|-EncodedCommand
+-ExecutionPolicy|\b-ep\b|\bbypass\b
+-WindowStyle|\bhidden\b
+Join-Path|\b*\.char\b
+bwmic
+bitsadmin
+vssadmin
+netsh
+whoami|quser|\bnet\b
+Net.Webclient|DownloadString|DownloadFile
+curl|wget
+Get-Clipboard
